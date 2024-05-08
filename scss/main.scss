@@ -1,0 +1,194 @@
+@charset "utf-8";
+// 定义主要的字体颜色
+$font-color: #3B3532;
+$main-blue: #366AB3;
+$main-yellow: #F4C53A;
+$background-color: #EFEFEF;
+
+
+html {
+    font-size: 62.5%; // 1rem = 10px
+}
+
+
+
+body {
+    font-family: "ABC Monument Grotesk Semi-Mono Unlicensed Trial", "Hiragino Sans", "Neue Haas Grotesk Display Pro";
+    color: $font-color;
+    font-size: 1.6rem;
+    min-height: 100vh;
+    background-color: $background-color;
+    overflow-x: hidden;
+}
+
+
+// 头部样式
+header{
+    .container{
+    display: flex; /* 启用 Flexbox 帜局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    height: 100vh;
+    background-image: url("../img/123.png");
+    position: relative; /* 设置相对定位 */
+    z-index: 1;
+        .bgtest{
+            display: flex; /* 启用 Flexbox 帜局 */
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(255, 0, 0, 0.3);
+            position: absolute; /* 设置相对定位 */
+            z-index: 2;
+        }
+        .image-bg {
+            position: absolute;
+            z-index: 10;
+            /* 初始化宽度和高度 */
+            &:nth-child(2) {
+                top: 43vh; left: 21vw;
+                img {
+                    width: 9.5vw;
+                    height: auto;
+                }
+            }
+            &:nth-child(3) {
+                    top: 49vh; left: 31vw;
+                    img {
+                        width: 1.9vw;
+                        height: auto;
+                    }
+            }
+            &:nth-child(4) {
+                top: 44vh; left: 30.5vw;
+                img {
+                    width: 2.3vw;
+                    height: auto;
+                }
+            }
+            &:nth-child(5) {
+                top: 46vh; left: 33.4vw;
+                img {
+                    width: 5vw;
+                    height: auto;
+                }
+            }
+            &:nth-child(6) {
+                top: 43.2vh; left: 38.7vw;
+                img {
+                    width: 4.8vw;
+                    height: auto;
+                }
+            }
+            &:nth-child(7) {
+                top: 44.8vh; left: 45vw;
+                img {
+                    width: 4.3vw;
+                    height: auto;
+                }
+            }
+            &:nth-child(8) {
+                top: 33vh; left: 49vw;
+                img {
+                    width: 5.3vw;
+                    height: auto;
+                }
+            }
+            &:nth-child(9) {
+                top: 40.8vh; left: 48vw;
+                z-index: 9;
+                img {
+                    width: 3.1vw;
+                    height: auto;
+                }
+            }
+            &:nth-child(10) {
+                top: 41vh; left: 54vw;
+                img {
+                    width: 4.9vw;
+                    height: auto;
+                }
+            }
+            &:nth-child(11) {
+                top: 36vh; left: 61vw;
+                img {
+                    width: 8vw;
+                    height: auto;
+                }
+            }
+            &:nth-child(12) {
+                top: 37vh; left: 70vw;
+                img {
+                    width: 2.8vw;
+                    height: auto;
+                }
+            }
+            &:nth-child(13) {
+                top: 31vh; left: 67.7vw;
+                img {
+                    width: 3.4vw;
+                    height: auto;
+                }
+            }
+            &:nth-child(14) {
+                top: 62vh; left: 25vw;
+                img {
+                    width: 6vw;
+                    height: auto;
+                }
+            }
+            &:nth-child(15) {
+                top: 63vh; left: 33vw;
+                img {
+                    width: 8vw;
+                    height: auto;
+                }
+            }
+            &:nth-child(16) {
+                top: 58vh; left: 45.8vw;
+                img {
+                    width: 6vw;
+                    height: auto;
+                }
+            }
+            &:nth-child(17) {
+                top: 62vh; left: 53vw;
+                img {
+                    width: 4.6vw;
+                    height: auto;
+                }
+            }
+            &:nth-child(18) {
+                top: 59vh; left: 58vw;
+                img {
+                    width: 6.4vw;
+                    height: auto;
+                }
+            }
+            &:nth-child(19) {
+                top: 56vh; left: 64.2vw;
+                img {
+                    width: 6.3vw;
+                    height: auto;
+                }
+            }
+            &:nth-child(20) {
+                top: 52.7vh; left: 71.2vw;
+                img {
+                    width: 5.2vw;
+                    height: auto;
+                }
+            }
+            &:nth-child(21) {
+                top: 50.3vh; left: 76.8vw;
+                img {
+                    width: 5.2vw;
+                    height: auto;
+                }
+            }
+
+    }
+    
+}
+}
