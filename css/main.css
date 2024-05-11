@@ -12,7 +12,7 @@ body {
   overflow-x: hidden;
 }
 
-header .container {
+header .home-container {
   display: flex; /* 启用 Flexbox 帜局 */
   justify-content: center; /* 水平居中 */
   align-items: center; /* 垂直居中 */
@@ -21,7 +21,7 @@ header .container {
   position: relative; /* 设置相对定位 */
   z-index: 1;
 }
-header .container .bgtest {
+header .home-container .bgtest {
   display: flex; /* 启用 Flexbox 帜局 */
   justify-content: center; /* 水平居中 */
   align-items: center; /* 垂直居中 */
@@ -30,173 +30,173 @@ header .container .bgtest {
   position: absolute; /* 设置相对定位 */
   z-index: 2;
 }
-header .container .image-bg {
+header .home-container .image-bg {
   position: absolute;
   z-index: 10;
   /* 初始化宽度和高度 */
 }
-header .container .image-bg:nth-child(2) {
+header .home-container .image-bg:nth-child(2) {
   top: 43vh;
   left: 21vw;
 }
-header .container .image-bg:nth-child(2) img {
+header .home-container .image-bg:nth-child(2) img {
   width: 9.5vw;
   height: auto;
 }
-header .container .image-bg:nth-child(3) {
+header .home-container .image-bg:nth-child(3) {
   top: 49vh;
   left: 31vw;
 }
-header .container .image-bg:nth-child(3) img {
+header .home-container .image-bg:nth-child(3) img {
   width: 1.9vw;
   height: auto;
 }
-header .container .image-bg:nth-child(4) {
+header .home-container .image-bg:nth-child(4) {
   top: 44vh;
   left: 30.5vw;
 }
-header .container .image-bg:nth-child(4) img {
+header .home-container .image-bg:nth-child(4) img {
   width: 2.3vw;
   height: auto;
 }
-header .container .image-bg:nth-child(5) {
+header .home-container .image-bg:nth-child(5) {
   top: 46vh;
   left: 33.4vw;
 }
-header .container .image-bg:nth-child(5) img {
+header .home-container .image-bg:nth-child(5) img {
   width: 5vw;
   height: auto;
 }
-header .container .image-bg:nth-child(6) {
+header .home-container .image-bg:nth-child(6) {
   top: 43.2vh;
   left: 38.7vw;
 }
-header .container .image-bg:nth-child(6) img {
+header .home-container .image-bg:nth-child(6) img {
   width: 4.8vw;
   height: auto;
 }
-header .container .image-bg:nth-child(7) {
+header .home-container .image-bg:nth-child(7) {
   top: 44.8vh;
   left: 45vw;
 }
-header .container .image-bg:nth-child(7) img {
+header .home-container .image-bg:nth-child(7) img {
   width: 4.3vw;
   height: auto;
 }
-header .container .image-bg:nth-child(8) {
+header .home-container .image-bg:nth-child(8) {
   top: 33vh;
   left: 49vw;
 }
-header .container .image-bg:nth-child(8) img {
+header .home-container .image-bg:nth-child(8) img {
   width: 5.3vw;
   height: auto;
 }
-header .container .image-bg:nth-child(9) {
+header .home-container .image-bg:nth-child(9) {
   top: 40.8vh;
   left: 48vw;
   z-index: 9;
 }
-header .container .image-bg:nth-child(9) img {
+header .home-container .image-bg:nth-child(9) img {
   width: 3.1vw;
   height: auto;
 }
-header .container .image-bg:nth-child(10) {
+header .home-container .image-bg:nth-child(10) {
   top: 41vh;
   left: 54vw;
 }
-header .container .image-bg:nth-child(10) img {
+header .home-container .image-bg:nth-child(10) img {
   width: 4.9vw;
   height: auto;
 }
-header .container .image-bg:nth-child(11) {
+header .home-container .image-bg:nth-child(11) {
   top: 36vh;
   left: 61vw;
 }
-header .container .image-bg:nth-child(11) img {
+header .home-container .image-bg:nth-child(11) img {
   width: 8vw;
   height: auto;
 }
-header .container .image-bg:nth-child(12) {
+header .home-container .image-bg:nth-child(12) {
   top: 37vh;
   left: 70vw;
 }
-header .container .image-bg:nth-child(12) img {
+header .home-container .image-bg:nth-child(12) img {
   width: 2.8vw;
   height: auto;
 }
-header .container .image-bg:nth-child(13) {
+header .home-container .image-bg:nth-child(13) {
   top: 31vh;
   left: 67.7vw;
 }
-header .container .image-bg:nth-child(13) img {
+header .home-container .image-bg:nth-child(13) img {
   width: 3.4vw;
   height: auto;
 }
-header .container .image-bg:nth-child(14) {
+header .home-container .image-bg:nth-child(14) {
   top: 62vh;
   left: 25vw;
 }
-header .container .image-bg:nth-child(14) img {
+header .home-container .image-bg:nth-child(14) img {
   width: 6vw;
   height: auto;
 }
-header .container .image-bg:nth-child(15) {
+header .home-container .image-bg:nth-child(15) {
   top: 63vh;
   left: 33vw;
 }
-header .container .image-bg:nth-child(15) img {
+header .home-container .image-bg:nth-child(15) img {
   width: 8vw;
   height: auto;
 }
-header .container .image-bg:nth-child(16) {
+header .home-container .image-bg:nth-child(16) {
   top: 58vh;
   left: 45.8vw;
 }
-header .container .image-bg:nth-child(16) img {
+header .home-container .image-bg:nth-child(16) img {
   width: 6vw;
   height: auto;
 }
-header .container .image-bg:nth-child(17) {
+header .home-container .image-bg:nth-child(17) {
   top: 62vh;
   left: 53vw;
 }
-header .container .image-bg:nth-child(17) img {
+header .home-container .image-bg:nth-child(17) img {
   width: 4.6vw;
   height: auto;
 }
-header .container .image-bg:nth-child(18) {
+header .home-container .image-bg:nth-child(18) {
   top: 59vh;
   left: 58vw;
 }
-header .container .image-bg:nth-child(18) img {
+header .home-container .image-bg:nth-child(18) img {
   width: 6.4vw;
   height: auto;
 }
-header .container .image-bg:nth-child(19) {
+header .home-container .image-bg:nth-child(19) {
   top: 56vh;
   left: 64.2vw;
 }
-header .container .image-bg:nth-child(19) img {
+header .home-container .image-bg:nth-child(19) img {
   width: 6.3vw;
   height: auto;
 }
-header .container .image-bg:nth-child(20) {
+header .home-container .image-bg:nth-child(20) {
   top: 52.7vh;
   left: 71.2vw;
 }
-header .container .image-bg:nth-child(20) img {
+header .home-container .image-bg:nth-child(20) img {
   width: 5.2vw;
   height: auto;
 }
-header .container .image-bg:nth-child(21) {
+header .home-container .image-bg:nth-child(21) {
   top: 50.3vh;
   left: 76.8vw;
 }
-header .container .image-bg:nth-child(21) img {
+header .home-container .image-bg:nth-child(21) img {
   width: 5.2vw;
   height: auto;
 }
-header .container #mainShape {
+header .home-container #mainShape {
   position: absolute;
   z-index: 4;
   top: 51%;
@@ -205,13 +205,13 @@ header .container #mainShape {
   width: 75vw;
   height: auto;
 }
-header .container #mainShape .path {
+header .home-container #mainShape .path {
   fill: none; /* 确保图形内部透明 */
   stroke: #fff100; /* 设置路径的颜色为黄色 */
   stroke-miterlimit: 1;
   stroke-width: 0.22rem; /* 设置路径的宽度 */
 }
-header .container #mainShape2 {
+header .home-container #mainShape2 {
   position: absolute;
   z-index: 3;
   top: 49%;
@@ -220,6 +220,120 @@ header .container #mainShape2 {
   width: 75vw;
   height: auto;
 }
-header .container #mainShape2 .path {
+header .home-container #mainShape2 .path {
   fill: none; /* 确保图形内部透明 */
+}
+
+main #overview {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EFEFEF;
+}
+main #overview .overview—container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 5vw;
+}
+main #overview .overview—container .overview-title-img {
+  margin-top: 3vw;
+}
+main #overview .overview—container .overview-title-img img {
+  width: 30vw;
+  height: auto;
+}
+main #overview .overview—container p {
+  width: 62vw;
+  color: #3B3532;
+  font-family: "Hiragino Sans";
+  font-size: 9.6rem;
+  font-style: normal;
+  font-weight: 1000;
+  line-height: 126px;
+  letter-spacing: 6.72px;
+  margin-top: 2vw;
+  margin-bottom: 1vw;
+  z-index: 10;
+}
+main #overview .overview—container p .custom-size {
+  font-size: 20rem; /* 或者任何你需要的大小 */
+}
+main #overview .overview—container p .static-color {
+  color: #366AB3; /* 设置为你想要的固定颜色 */
+}
+main #overview .overview—container .reveal-type {
+  color: transparent; /* 初始透明 */
+  -webkit-text-stroke: 1px #3B3532;
+}
+main #overview .overview-bg-text {
+  position: absolute;
+  top: 50%;
+  left: -8vw;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+}
+main #overview .overview-bg-text span {
+  width: max-content;
+  color: #DFDFDF;
+  font-family: "Hiragino Sans";
+  font-size: 50rem;
+  font-style: normal;
+  font-weight: 900;
+  z-index: 1;
+  letter-spacing: -12px;
+  writing-mode: vertical-rl;
+}
+main #overview .overview-l1 {
+  position: absolute;
+  top: 20%;
+  left: -5vw;
+  z-index: 2;
+}
+main #overview .overview-l1 img {
+  width: 20vw;
+  height: auto;
+  transform: rotate(-15deg);
+  transform-origin: top left;
+}
+main #overview .overview-r1 {
+  position: absolute;
+  top: 40%;
+  right: -5vw;
+  z-index: 2;
+}
+main #overview .overview-r1 img {
+  width: 20vw;
+  height: auto;
+  transform: rotate(15deg);
+  transform-origin: top right;
+}
+main #overview .overview-l2 {
+  position: absolute;
+  top: 60%;
+  left: -5vw;
+  z-index: 2;
+}
+main #overview .overview-l2 img {
+  width: 15vw;
+  height: auto;
+  transform: rotate(-10deg);
+  transform-origin: top left;
+}
+main #overview .overview-r2 {
+  position: absolute;
+  top: 80%;
+  right: -8vw;
+  z-index: 2;
+}
+main #overview .overview-r2 img {
+  width: 15vw;
+  height: auto;
+  transform: rotate(15deg);
+  transform-origin: top right;
 }

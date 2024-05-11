@@ -1,4 +1,13 @@
 "use strict";
+import { gsap } from "gsap";
+    
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+/* The following plugin is a Club GSAP perk */
+import { SplitText } from "gsap/SplitText";
+gsap.registerPlugin(ScrollTrigger,ScrollToPlugin,SplitText);
+
 
 // 路径数据
     const paths = [
@@ -52,23 +61,66 @@
         });
 
 // 飞出去的动画
-gsap.to("#rockets", {
-    delay: 3,  // 延迟3秒开始动画
-    x: window.innerWidth,
-    y: -window.innerHeight,
-    duration: 4,  // 减少飞行时间为4秒，稍微加快速度
-    ease: "power1.in",
-    onComplete: () => {
-        // 渐隐消失
-        gsap.to("#rockets", { opacity: 0, duration: 0.5, onComplete: () => {
-            // 重置位置并延迟3秒后开始渐显
-            gsap.set("#rockets", { x: 0, y: 0, opacity: 0 });  // 使用 set 来立即重置位置而不产生动画效果
-            gsap.to("#rockets", { 
-                opacity: 1, 
-                duration: 0.5, 
-                delay: 3  // 飞出去后延迟3秒再开始渐显
-            });
-        }});
+        gsap.to("#rockets", {
+            delay: 3,  // 延迟3秒开始动画
+            x: window.innerWidth,
+            y: -window.innerHeight,
+            duration: 4,  // 减少飞行时间为4秒，稍微加快速度
+            ease: "power1.in",
+            onComplete: () => {
+                // 渐隐消失
+                gsap.to("#rockets", { opacity: 0, duration: 0.5, onComplete: () => {
+                    // 重置位置并延迟3秒后开始渐显
+                    gsap.set("#rockets", { x: 0, y: 0, opacity: 0 });  // 使用 set 来立即重置位置而不产生动画效果
+                    gsap.to("#rockets", { 
+                        opacity: 1, 
+                        duration: 0.5, 
+                        delay: 3  // 飞出去后延迟3秒再开始渐显
+                    });
+                }});
+            }
+        });
+
+// 文字动画
+document.addEventListener('DOMContentLoaded', function () {
+    // 选择所有具有 'reveal-type' 类的元素
+    const revealTypes = document.querySelectorAll('.reveal-type');
+
+    revealTypes.forEach((char) => {
+        // 在文本上初始化 SplitText，将其分割为单独的字符以便进行个别动画
+        const text = new SplitText(char, { type: 'chars' });
+
+        // 使用 GSAP 从初始状态到最终状态进行动画设置，当元素进入视口时开始动画
+        gsap.fromTo(text.chars, {
+            color: 'transparent', // 开始时文字颜色透明
+            webkitTextStroke: '1px #cccccc' // 初始文字描边
+        }, {
+            color: '#3B3532', // 结束时使用您的 SCSS 中定义的字体颜色
+            webkitTextStroke: '0px transparent', // 结束时无文字描边
+            duration: 0.3,
+            stagger: 0.02,
+            scrollTrigger: {
+                trigger: char,
+                start: 'top 80%', // 当元素顶部距视口顶部 80% 时开始动画
+                end: 'top 20%', // 当元素顶部距视口顶部 20% 时结束动画
+                scrub: true,
+                toggleActions: 'play play reverse reverse'
+            }
+        });
+    });
+
+    // 初始化平滑滚动（假设您正在使用 Lenis 进行平滑滚动）
+    const lenis = new Lenis({
+        lerp: 0.1 // 平滑滚动强度，根据需要调整
+    });
+
+    // 处理每个动画帧
+    function raf(time) {
+        lenis.raf(time); // 在每个动画帧更新 Lenis
+        requestAnimationFrame(raf); // 继续动画帧循环
     }
+
+    // 开始动画帧循环
+    requestAnimationFrame(raf);
 });
 

@@ -24,7 +24,7 @@ body {
 
 // 头部样式
 header{
-    .container{
+    .home-container{
     display: flex; /* 启用 Flexbox 帜局 */
     justify-content: center; /* 水平居中 */
     align-items: center; /* 垂直居中 */
@@ -225,4 +225,122 @@ header{
     }
     
 }
+}
+main{
+    #overview{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $background-color;
+        .overview—container{
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding-bottom: 5vw;
+            .overview-title-img{
+                margin-top: 3vw;
+                img{
+                    width: 30vw;
+                    height: auto;
+                
+                }
+            }
+            p{
+                width: 62vw;
+                color: $font-color;
+                font-family: "Hiragino Sans";
+                font-size: 9.6rem;
+                font-style: normal;
+                font-weight: 1000;
+                line-height: 126px;
+                letter-spacing: 6.72px;
+                margin-top: 2vw;
+                margin-bottom: 1vw;
+                z-index: 10;
+                .custom-size {
+                    font-size: 20rem; /* 或者任何你需要的大小 */
+                }
+                .static-color {
+                    color: $main-blue; /* 设置为你想要的固定颜色 */
+                }
+            }
+            .reveal-type {
+                color: transparent; /* 初始透明 */
+                -webkit-text-stroke: 1px $font-color /* 初始边框颜色，可以调整 */
+            }
+            
+        }
+        .overview-bg-text{
+            position: absolute;
+            top: 50%;  // 将容器定位到父容器的垂直中间
+            left: -8vw;   // 容器放置于最左边
+            transform: translateY(-50%);  // 垂直居中对齐
+            display: flex;  // 启用Flexbox布局
+            flex-direction: column;  // 设置Flex方向为垂直
+            span{
+                width: max-content;
+                color: #DFDFDF;
+                font-family: "Hiragino Sans";
+                font-size: 50rem;
+                font-style: normal;
+                font-weight: 900;
+                z-index: 1;
+                letter-spacing: -12px;
+                writing-mode: vertical-rl;  // 设置文字垂直排列
+            }
+        }
+        .overview-l1{
+            position: absolute;
+            top: 20%;  // 将容器定位到父容器的垂直中间
+            left: -5vw;   // 容器放置于最左边
+            z-index: 2;
+            img{
+                width: 20vw;
+                height: auto;
+                transform: rotate(-15deg);
+                transform-origin: top left;
+            }
+        }
+        .overview-r1{
+            position: absolute;
+            top: 40%;  // 将容器定位到父容器的垂直中间
+            right: -5vw;   // 容器放置于最左边
+            z-index: 2;
+            img{
+                width: 20vw;
+                height: auto;
+                transform: rotate(15deg);
+                transform-origin: top right;
+            }
+        }
+        .overview-l2{
+            position: absolute;
+            top: 60%;  // 将容器定位到父容器的垂直中间
+            left: -5vw;   // 容器放置于最左边
+            z-index: 2;
+            img{
+                width: 15vw;
+                height: auto;
+                transform: rotate(-10deg);
+                transform-origin: top left;
+                
+            }
+        }
+        .overview-r2{
+            position: absolute;
+            top: 80%;  // 将容器定位到父容器的垂直中间
+            right: -8vw;  // 容器放置于最左边
+            z-index: 2;
+            img{
+                width: 15vw;
+                height: auto;
+                transform: rotate(15deg);
+                transform-origin: top right;
+            }
+        }
+    }
 }
