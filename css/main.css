@@ -17,7 +17,7 @@ header .container {
   justify-content: center; /* 水平居中 */
   align-items: center; /* 垂直居中 */
   height: 100vh;
-  background-image: url("../img/123.png");
+  background-color: #5CB5DD;
   position: relative; /* 设置相对定位 */
   z-index: 1;
 }
@@ -27,7 +27,6 @@ header .container .bgtest {
   align-items: center; /* 垂直居中 */
   width: 100vw;
   height: 100vh;
-  background-color: rgba(255, 0, 0, 0.3);
   position: absolute; /* 设置相对定位 */
   z-index: 2;
 }
@@ -196,4 +195,31 @@ header .container .image-bg:nth-child(21) {
 header .container .image-bg:nth-child(21) img {
   width: 5.2vw;
   height: auto;
+}
+header .container #mainShape {
+  position: absolute;
+  z-index: 4;
+  top: 51%;
+  left: 51%;
+  transform: translate(-50%, -50%); /* 向左和向上移动自身宽高的50% */
+  width: 75vw;
+  height: auto;
+}
+header .container #mainShape .path {
+  fill: none; /* 确保图形内部透明 */
+  stroke: #fff100; /* 设置路径的颜色为黄色 */
+  stroke-miterlimit: 1;
+  stroke-width: 0.22rem; /* 设置路径的宽度 */
+}
+header .container #mainShape2 {
+  position: absolute;
+  z-index: 3;
+  top: 49%;
+  left: 49%;
+  transform: translate(-50%, -50%); /* 向左和向上移动自身宽高的50% */
+  width: 75vw;
+  height: auto;
+}
+header .container #mainShape2 .path {
+  fill: none; /* 确保图形内部透明 */
 }
