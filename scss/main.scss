@@ -3,6 +3,7 @@
 $font-color: #3B3532;
 $main-blue: #366AB3;
 $main-yellow: #F4C53A;
+$main-green: #6EBD6C;
 $background-color: #EFEFEF;
 
 
@@ -19,11 +20,21 @@ body {
     min-height: 100vh;
     background-color: $background-color;
     overflow-x: hidden;
+    background-color: #3B3532;
 }
 
 
 // 头部样式
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    
+}
 header{
+    
     .home-container{
     display: flex; /* 启用 Flexbox 帜局 */
     justify-content: center; /* 水平居中 */
@@ -226,6 +237,13 @@ header{
     
 }
 }
+.main{
+    position: absolute;
+    top: 100vh;
+    width: 100%;
+    
+}
+
 main{
     #overview{
         position: relative;
@@ -241,6 +259,7 @@ main{
             align-items: center;
             flex-direction: column;
             padding-bottom: 5vw;
+            width: 70vw;
             .overview-title-img{
                 margin-top: 3vw;
                 img{
@@ -259,18 +278,23 @@ main{
                 line-height: 126px;
                 letter-spacing: 6.72px;
                 margin-top: 2vw;
-                margin-bottom: 1vw;
+                margin-bottom: 1vw;   
+                padding-left: 2vw;         
                 z-index: 10;
+                
                 .custom-size {
                     font-size: 20rem; /* 或者任何你需要的大小 */
                 }
                 .static-color {
                     color: $main-blue; /* 设置为你想要的固定颜色 */
+                    
                 }
+                
             }
             .reveal-type {
                 color: transparent; /* 初始透明 */
                 -webkit-text-stroke: 1px $font-color /* 初始边框颜色，可以调整 */
+                
             }
             
         }
@@ -291,12 +315,13 @@ main{
                 z-index: 1;
                 letter-spacing: -12px;
                 writing-mode: vertical-rl;  // 设置文字垂直排列
+                
             }
         }
         .overview-l1{
             position: absolute;
             top: 20%;  // 将容器定位到父容器的垂直中间
-            left: -5vw;   // 容器放置于最左边
+            left: -10vw;   // 容器放置于最左边
             z-index: 2;
             img{
                 width: 20vw;
@@ -342,5 +367,140 @@ main{
                 transform-origin: top right;
             }
         }
+    }
+
+    #project-intent{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        background-color: #DCDCD2;
+        padding: 10vw 20vw;
+        height: 100vh;
+        width: auto;
+        p{
+            color: $main-blue;
+            font-family: "Hiragino Sans";
+            font-size: 3rem;
+            font-style: normal;
+            font-weight: 800;
+            line-height: 6rem; /* 175% */
+            letter-spacing: -0.96px;
+            .point-color{
+                color: $main-green;
+            }
+        }
+        .horizontal-line {
+            margin-top: 2vw;
+            margin-bottom: 1vw;
+            display: inline-block;
+            width: 1.6vw; /* 控制横线长度 */
+            height:0.23vw; /* 控制横线厚度 */
+            background-color: $main-green; /* 控制横线颜色 */
+        }
+        .project-intent-text{
+            color: $main-green;
+            font-family: "Hiragino Sans";
+            font-size: 2rem;
+            font-style: normal;
+            font-weight: 800;
+            letter-spacing: -0.64px;
+            margin-bottom: 0.2vw;
+        }
+        .project-intent-director{
+            color: $main-blue;
+            font-family: "Hiragino Sans";
+            font-size: 2.5rem;
+            font-style: normal;
+            font-weight: 800;
+            letter-spacing: -0.64px;
+        }
+        .quote-l{
+            position: absolute;
+            top: 16vh;
+            left: 16vw;
+            z-index: 1;
+            img{
+                width: 12vw;
+                height: auto;
+            }
+        }
+        .quote-r{
+            position: absolute;
+            bottom: 30vh;
+            right: 16vw;
+            z-index: 1;
+            img{
+                width: 12vw;
+                height: auto;
+            }
+        }
+    }
+
+    #story{
+        display: flex;
+        flex-direction: column;
+        background-color: $background-color;
+        height: auto;
+        width: 100vw;
+        height: 100vh;
+        justify-content: space-between;
+        .top-content{
+            display: flex;
+            justify-content: space-between;
+            padding: 3vw 3vw 0 3vw;
+            .summary{
+                width: 40vw;
+                height: auto;
+                h2{
+                    color: $main-green;
+                    font-family: AB-j_gu;
+                    font-size: 9rem;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 4rem; /* 58.333% */
+                    letter-spacing: 1.92px;
+                    z-index: 10;
+                }
+                img{
+                    margin: 1vw;
+                }
+                p{
+                    color: $main-blue;
+                    font-family: "Hiragino Sans";
+                    font-size: 4rem;
+                    font-style: normal;
+                    font-weight: 900;
+                    line-height: 4rem; /* 87.5% */
+                    letter-spacing: 1.28px;
+                    width: 27vw;
+                }
+                
+            }
+            .full-story{
+                width: 30vw;
+                height: auto;
+                p{
+                    color: $main-blue;
+                    font-family: "Hiragino Sans";
+                    font-size: 2.3rem;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 3.4rem; /* 175% */
+                    letter-spacing: 0.1rem;
+                }
+            }
+        }
+        .bottom-image{
+            width: 100vw; /* 视口宽度 */
+            height: 30vh; /* 视口高度的10% */
+            background-image: url('../img/WechatIMG6863.PNG'); /* 替换为你的图片路径 */
+            background-size: cover; /* 覆盖整个容器，保持图片比例 */
+            background-position: 50% 40%;
+            background-repeat: no-repeat; /* 不重复图片 */
+        }
+        
+        
     }
 }

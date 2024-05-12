@@ -3,12 +3,24 @@ import { gsap } from "gsap";
     
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+import { TextPlugin } from "gsap/TextPlugin";
 
-/* The following plugin is a Club GSAP perk */
+/* The following plugins are Club GSAP perks */
+import { DrawSVGPlugin } from "gsap/DrawSVGPlugin";
+import { MorphSVGPlugin } from "gsap/MorphSVGPlugin";
 import { SplitText } from "gsap/SplitText";
-gsap.registerPlugin(ScrollTrigger,ScrollToPlugin,SplitText);
+import bgImage from '../img/fv_bg@2x.png';
+
+gsap.registerPlugin(ScrollTrigger,ScrollToPlugin,TextPlugin,DrawSVGPlugin,MorphSVGPlugin,SplitText);
 
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const svgImage = document.querySelector('#mainShape2 image');
+    if (svgImage) {
+        svgImage.setAttribute('href', bgImage);
+    }
+});
 // 路径数据
     const paths = [
         "M20.57,294.73c14.25,5.58,74.76,21.07,68.4,43.01-24.97,86.09,23.44,49.34,77.63,34.53,40.06-10.95,26.66,26.24,67.15,16.76,32.01-7.49,29.73-54.56,93.05-39.87,31.62,7.33,22.05,47.96,68.8,42.28,58.57-7.12,22.88-42.14,66.56-55.93,56.06-17.7,56.4,10.65,73.11,13.73,51.69,9.52,66.97-34.9,84.76-43.41,67.74-32.4,36.24-60.96,24.15-79.84-15.68-24.51,19.72-30.77,12.6-49.91-13.27-35.66-23.81-12.44-56.62-33.66-35.81-23.17,40.49-46.4-3.8-71.69-41.67-23.79-98.67,10.56-103.18.09-7.52-17.46,5.89-40.27-71.58-3.23-4.03,1.93-33.66-58.68-78.15-64.76-53.73-7.34-44.68,83.8-89.86,88.18-33.58,3.26-40.78-49.1-110.14-11.65-31.6,17.06-36.55,71.42-58.29,64.71C2.5,118.58-16.58,280.18,20.57,294.73Z", // 第一个形状
@@ -51,6 +63,7 @@ gsap.registerPlugin(ScrollTrigger,ScrollToPlugin,SplitText);
             repeat: -1, // 重复次数，-1 为无限循环
             yoyo: true // 开启往返动画
         });
+        
 
 // 地球旋转动画
         gsap.to("#earth", {
@@ -81,46 +94,109 @@ gsap.registerPlugin(ScrollTrigger,ScrollToPlugin,SplitText);
             }
         });
 
+
+// 顶部导航栏动画
+document.addEventListener("DOMContentLoaded", function () {
+    // 第一部分动画：.header的动画效果
+    gsap.to(".header", {
+      scrollTrigger: {
+        trigger: ".header", // 触发动画的元素
+        start: "top top", // 动画开始的位置（当.header顶部到达视口顶部）
+        end: () => "+=" + (window.innerHeight + document.querySelector(".main").offsetHeight * 0.5),
+        // 动画结束的位置，这里使用一个函数动态计算，基于.window的高度加上.main元素高度的一半
+        scrub: 1, // 动画的平滑过渡时间（以秒计），这里设置为1秒内平滑过渡
+        pin: true, // 固定.trigger元素，直到滚动触发结束
+      },
+      y: 250, // 在Y轴上移动250像素
+      scale: 0.75, // 缩放到75%
+      rotation: -15, // 旋转-15度
+      ease: "power3.out", // 缓动函数，这里使用power3的渐出效果
+    });
+  
+    // 第二部分动画：.main的动画效果
+    gsap.fromTo(
+      "#overview", {
+        x: -100, // 初始横向位置，从-100像素开始
+        scale: 0.3, // 初始缩放比例
+        rotation: 15, // 初始旋转角度
+      }, {
+        scrollTrigger: {
+          trigger: "#overview", // 触发动画的元素
+          start: "top 300%", // 动画开始的位置（当.main顶部到达视口顶部的200%位置）
+          end: "top 50%", // 动画结束的位置（当.main顶部到达视口顶部的50%位置）
+          scrub: 1, // 动画的平滑过渡时间，这里设置为1秒
+        },
+        x: 0, // 动画结束时的横向位置，移动到0像素位置
+        scale: 1, // 动画结束时的缩放比例，恢复到100%
+        rotation: 0, // 动画结束时的旋转角度，恢复到0度
+        ease: "power3.out", // 缓动函数，使用power3的渐出效果
+      }
+    );
+  });
+
+
 // 文字动画
+
 document.addEventListener('DOMContentLoaded', function () {
-    // 选择所有具有 'reveal-type' 类的元素
     const revealTypes = document.querySelectorAll('.reveal-type');
 
     revealTypes.forEach((char) => {
-        // 在文本上初始化 SplitText，将其分割为单独的字符以便进行个别动画
+        // 仅使用 chars 类型分割，避免引入额外的 word 分割
         const text = new SplitText(char, { type: 'chars' });
+        const normalChars = Array.from(text.chars).filter(c => !c.closest('.static-color'));
+        const specialChars = Array.from(text.chars).filter(c => c.closest('.static-color'));
 
-        // 使用 GSAP 从初始状态到最终状态进行动画设置，当元素进入视口时开始动画
-        gsap.fromTo(text.chars, {
-            color: 'transparent', // 开始时文字颜色透明
-            webkitTextStroke: '1px #cccccc' // 初始文字描边
+        // 确保所有生成的元素都以 inline-block 显示
+        text.chars.forEach(c => c.style.display = 'inline-block');
+
+        // 应用动画到 normalChars
+        gsap.fromTo(normalChars, {
+            color: 'transparent',
+            webkitTextStroke: '1px #3B3532'
         }, {
-            color: '#3B3532', // 结束时使用您的 SCSS 中定义的字体颜色
-            webkitTextStroke: '0px transparent', // 结束时无文字描边
+            color: '#3B3532',
+            webkitTextStroke: '0px transparent',
             duration: 0.3,
             stagger: 0.02,
             scrollTrigger: {
                 trigger: char,
-                start: 'top 80%', // 当元素顶部距视口顶部 80% 时开始动画
-                end: 'top 20%', // 当元素顶部距视口顶部 20% 时结束动画
+                start: 'top 80%',
+                end: 'top 20%',
+                scrub: true,
+                toggleActions: 'play play reverse reverse'
+            }
+        });
+
+        // 应用动画到 specialChars
+        gsap.fromTo(specialChars, {
+            color: 'transparent',
+            webkitTextStroke: '1px #3B3532'
+        }, {
+            color: '#366AB3',
+            webkitTextStroke: '0px transparent',
+            duration: 0.3,
+            stagger: 0.02,
+            scrollTrigger: {
+                trigger: char,
+                start: 'top 80%',
+                end: 'top 20%',
                 scrub: true,
                 toggleActions: 'play play reverse reverse'
             }
         });
     });
 
-    // 初始化平滑滚动（假设您正在使用 Lenis 进行平滑滚动）
+    // 初始化 Lenis 平滑滚动
     const lenis = new Lenis({
-        lerp: 0.1 // 平滑滚动强度，根据需要调整
+        lerp: 0.1
     });
 
-    // 处理每个动画帧
     function raf(time) {
-        lenis.raf(time); // 在每个动画帧更新 Lenis
-        requestAnimationFrame(raf); // 继续动画帧循环
+        lenis.raf(time);
+        requestAnimationFrame(raf);
     }
 
-    // 开始动画帧循环
     requestAnimationFrame(raf);
 });
+
 

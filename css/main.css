@@ -10,6 +10,15 @@ body {
   min-height: 100vh;
   background-color: #EFEFEF;
   overflow-x: hidden;
+  background-color: #3B3532;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 header .home-container {
@@ -224,6 +233,12 @@ header .home-container #mainShape2 .path {
   fill: none; /* 确保图形内部透明 */
 }
 
+.main {
+  position: absolute;
+  top: 100vh;
+  width: 100%;
+}
+
 main #overview {
   position: relative;
   display: flex;
@@ -239,6 +254,7 @@ main #overview .overview—container {
   align-items: center;
   flex-direction: column;
   padding-bottom: 5vw;
+  width: 70vw;
 }
 main #overview .overview—container .overview-title-img {
   margin-top: 3vw;
@@ -258,6 +274,7 @@ main #overview .overview—container p {
   letter-spacing: 6.72px;
   margin-top: 2vw;
   margin-bottom: 1vw;
+  padding-left: 2vw;
   z-index: 10;
 }
 main #overview .overview—container p .custom-size {
@@ -292,7 +309,7 @@ main #overview .overview-bg-text span {
 main #overview .overview-l1 {
   position: absolute;
   top: 20%;
-  left: -5vw;
+  left: -10vw;
   z-index: 2;
 }
 main #overview .overview-l1 img {
@@ -336,4 +353,134 @@ main #overview .overview-r2 img {
   height: auto;
   transform: rotate(15deg);
   transform-origin: top right;
+}
+main #project-intent {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color: #DCDCD2;
+  padding: 10vw 20vw;
+  height: 100vh;
+  width: auto;
+}
+main #project-intent p {
+  color: #366AB3;
+  font-family: "Hiragino Sans";
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 6rem; /* 175% */
+  letter-spacing: -0.96px;
+}
+main #project-intent p .point-color {
+  color: #6EBD6C;
+}
+main #project-intent .horizontal-line {
+  margin-top: 2vw;
+  margin-bottom: 1vw;
+  display: inline-block;
+  width: 1.6vw; /* 控制横线长度 */
+  height: 0.23vw; /* 控制横线厚度 */
+  background-color: #6EBD6C; /* 控制横线颜色 */
+}
+main #project-intent .project-intent-text {
+  color: #6EBD6C;
+  font-family: "Hiragino Sans";
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: -0.64px;
+  margin-bottom: 0.2vw;
+}
+main #project-intent .project-intent-director {
+  color: #366AB3;
+  font-family: "Hiragino Sans";
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: -0.64px;
+}
+main #project-intent .quote-l {
+  position: absolute;
+  top: 16vh;
+  left: 16vw;
+  z-index: 1;
+}
+main #project-intent .quote-l img {
+  width: 12vw;
+  height: auto;
+}
+main #project-intent .quote-r {
+  position: absolute;
+  bottom: 30vh;
+  right: 16vw;
+  z-index: 1;
+}
+main #project-intent .quote-r img {
+  width: 12vw;
+  height: auto;
+}
+main #story {
+  display: flex;
+  flex-direction: column;
+  background-color: #EFEFEF;
+  height: auto;
+  width: 100vw;
+  height: 100vh;
+  justify-content: space-between;
+}
+main #story .top-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 3vw 3vw 0 3vw;
+}
+main #story .top-content .summary {
+  width: 40vw;
+  height: auto;
+}
+main #story .top-content .summary h2 {
+  color: #6EBD6C;
+  font-family: AB-j_gu;
+  font-size: 9rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 4rem; /* 58.333% */
+  letter-spacing: 1.92px;
+  z-index: 10;
+}
+main #story .top-content .summary img {
+  margin: 1vw;
+}
+main #story .top-content .summary p {
+  color: #366AB3;
+  font-family: "Hiragino Sans";
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 4rem; /* 87.5% */
+  letter-spacing: 1.28px;
+  width: 27vw;
+}
+main #story .top-content .full-story {
+  width: 30vw;
+  height: auto;
+}
+main #story .top-content .full-story p {
+  color: #366AB3;
+  font-family: "Hiragino Sans";
+  font-size: 2.3rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 3.4rem; /* 175% */
+  letter-spacing: 0.1rem;
+}
+main #story .bottom-image {
+  width: 100vw; /* 视口宽度 */
+  height: 30vh; /* 视口高度的10% */
+  background-image: url("../img/WechatIMG6863.PNG"); /* 替换为你的图片路径 */
+  background-size: cover; /* 覆盖整个容器，保持图片比例 */
+  background-position: 50% 40%;
+  background-repeat: no-repeat; /* 不重复图片 */
 }
