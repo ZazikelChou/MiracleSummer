@@ -72,6 +72,12 @@ document.addEventListener('DOMContentLoaded', () => {
             ease: "none", // 线性动画，无缓动效果
             repeat: -1 // 无限重复
         });
+        gsap.to("#earth2", {
+            rotation: 360, // 旋转360度
+            duration: 10, // 持续时间，这里假设是10秒完成一圈
+            ease: "none", // 线性动画，无缓动效果
+            repeat: -1 // 无限重复
+        });
 
 // 飞出去的动画
         gsap.to("#rockets", {
@@ -198,5 +204,196 @@ document.addEventListener('DOMContentLoaded', function () {
 
     requestAnimationFrame(raf);
 });
+
+
+function adjustStoryHeight() {
+    const storyBg = document.getElementById('story-bg');
+    const story = document.getElementById('story');
+    if (storyBg && story) {
+        story.style.height = storyBg.offsetHeight + 'px';
+    }
+}
+
+// 在页面加载时调整高度
+window.addEventListener('load', adjustStoryHeight);
+
+// 在窗口调整大小时调整高度
+window.addEventListener('resize', adjustStoryHeight);
+
+
+
+
+// staff菜单动画
+document.addEventListener("DOMContentLoaded", function () {
+    const staffCards = document.querySelectorAll(".staff-card");
+    const staffInfos = document.querySelectorAll(".staff-info");
+
+    staffCards.forEach(card => {
+        const svgPaths = card.querySelectorAll('.staff-item-R svg path');
+
+        card.addEventListener("mouseenter", () => {
+            gsap.to(svgPaths, { stroke: "#F4C53A", duration: 0.5 });
+        });
+
+        card.addEventListener("mouseleave", () => {
+            gsap.to(svgPaths, { stroke: "#3B3532", duration: 0.5 });
+        });
+
+        card.addEventListener("click", function (event) {
+            const infoId = this.querySelector(".staff-item").getAttribute("data-info");
+            const infoElement = document.getElementById(infoId);
+
+            // 关闭所有已打开的卡片，并复原SVG
+            staffInfos.forEach(info => {
+                const openCard = info.closest(".staff-card");
+                const openSvgPaths = openCard.querySelectorAll('.staff-item-R svg path');
+
+                if (info !== infoElement && info.style.display === "grid") {
+                    gsap.to(info, { height: 0, opacity: 0, duration: 0.5, onComplete: () => {
+                        info.style.display = "none";
+                    }});
+                    gsap.to(openSvgPaths, { morphSVG: "#original-svg-path", duration: 0.5 });
+                }
+            });
+
+            // 切换点击的卡片并改变SVG形状
+            if (infoElement.style.display === "none" || !infoElement.style.display) {
+                infoElement.style.display = "grid";
+                gsap.fromTo(infoElement, { height: 0, opacity: 0 }, { height: infoElement.scrollHeight, opacity: 1, duration: 0.5 });
+                
+                // 使用MorphSVGPlugin改变当前卡片的SVG形状
+                gsap.to(svgPaths, { morphSVG: "#new-svg-path", duration: 0.5 });
+            } else {
+                gsap.to(infoElement, { height: 0, opacity: 0, duration: 0.5, onComplete: () => {
+                    infoElement.style.display = "none";
+                }});
+                
+                // 复原当前卡片的SVG形状
+                gsap.to(svgPaths, { morphSVG: "#original-svg-path", duration: 0.5 });
+            }
+
+            // 阻止事件冒泡，以避免触发 document 的 click 事件
+            event.stopPropagation();
+        });
+    });
+
+    // 当点击页面其他地方时关闭所有卡片
+    document.addEventListener("click", function (e) {
+        staffInfos.forEach(info => {
+            const openCard = info.closest(".staff-card");
+            const openSvgPaths = openCard.querySelectorAll('.staff-item-R svg path');
+
+            if (info.style.display === "grid") {
+                gsap.to(info, { height: 0, opacity: 0, duration: 0.5, onComplete: () => {
+                    info.style.display = "none";
+                }});
+                gsap.to(openSvgPaths, { morphSVG: "#original-svg-path", duration: 0.5 });
+            }
+        });
+    });
+});
+
+// bento动画
+const brandContact = document.querySelector('.brand-contact');
+const brandContactBg = document.querySelector('.brand-contact-bg');
+const contactContainerM = document.querySelector('.contact-container-m');
+
+const otherElements = document.querySelectorAll('.contact-container-t, .contact-container-b');
+
+brandContact.addEventListener('mouseenter', () => {
+    gsap.to(brandContactBg, { opacity: 1, duration: 0.3 });
+    gsap.to(contactContainerM, { color: '#EFEFEF', duration: 0.3 });
+
+    gsap.to(otherElements, { opacity: 0, duration: 0.3 });
+});
+
+brandContact.addEventListener('mouseleave', () => {
+    gsap.to(brandContactBg, { opacity: 0, duration: 0.3 });
+    gsap.to(contactContainerM, { color: '#3B3532', duration: 0.3 });
+
+    gsap.to(otherElements, { opacity: 1, duration: 0.3 });
+});
+
+const projects = document.querySelector('.projects');
+const outlineProjectsBg = document.querySelector('.outline-projects-bg');
+const outlineProjectsStickers = document.querySelector('.outline-projects-stickers img');
+const outlineProjectsArrow = document.querySelector('.outline-projects-arrow svg');
+const projectList = document.querySelectorAll('.project-list');
+
+projects.addEventListener('mouseenter', () => {
+    gsap.to(outlineProjectsBg, { opacity: 1, duration: 0.3 });
+    gsap.to(outlineProjectsStickers, { opacity: 0.7, duration: 0.3 });
+    gsap.to(outlineProjectsArrow , { stroke: '#EFEFEF', duration: 0.3 });
+    gsap.to(projectList, { opacity: 0, duration: 0.3 });
+});
+
+projects.addEventListener('mouseleave', () => {
+    gsap.to(outlineProjectsBg, { opacity: 0, duration: 0.3 });
+    gsap.to(outlineProjectsStickers, { opacity: 0.3, duration: 0.3 });
+    gsap.to(outlineProjectsArrow , { stroke: '#3B3532', duration: 0.3 });
+    gsap.to(projectList, { opacity: 1, duration: 0.3 });
+});
+
+
+
+
+
+
+
+
+
+gsap.to(".row-1, .row-2", 1, {
+    top: 0,
+    ease: "power4.out",
+    delay: 1,
+    stagger: {
+      amount: 0.5,
+    },
+  });
+
+  gsap.to(".brand-name", 1, {
+    left: 0,
+    ease: "power4.out",
+    delay: 2.5,
+    stagger: {
+      amount: 0.5,
+    },
+  });
+
+  gsap.from(".budget-list h3", 0.1, {
+    opacity: 0,
+    ease: "power4.out",
+    delay: 2,
+  });
+
+  gsap.from("#earth2, #earth3", 2, {
+    scale: 0,
+    ease: "power4.out",
+    delay: 2,
+  });
+
+ 
+
+
+
+  gsap.to("h2, h3", 1, {
+    top: 0,
+    ease: "power4.out",
+    delay: 2,
+    stagger: {
+      amount: 0.5,
+    },
+  });
+
+
+
+
+
+  gsap.from(".marquee", 1, {
+    bottom: "-10em",
+    ease: "power4.out",
+    delay: 3,
+  });
+
 
 
