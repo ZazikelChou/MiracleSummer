@@ -302,14 +302,14 @@ const otherElements = document.querySelectorAll('.contact-container-t, .contact-
 
 brandContact.addEventListener('mouseenter', () => {
     gsap.to(brandContactBg, { opacity: 1, duration: 0.3 });
-    gsap.to(contactContainerM, { color: '#EFEFEF', duration: 0.3 });
+    gsap.to(contactContainerM, { color: '#EFEFEF', scale: 0.8, duration: 0.3 });
 
     gsap.to(otherElements, { opacity: 0, duration: 0.3 });
 });
 
 brandContact.addEventListener('mouseleave', () => {
     gsap.to(brandContactBg, { opacity: 0, duration: 0.3 });
-    gsap.to(contactContainerM, { color: '#3B3532', duration: 0.3 });
+    gsap.to(contactContainerM, { color: '#3B3532', scale: 1, duration: 0.3 });
 
     gsap.to(otherElements, { opacity: 1, duration: 0.3 });
 });
@@ -322,22 +322,180 @@ const projectList = document.querySelectorAll('.project-list');
 
 projects.addEventListener('mouseenter', () => {
     gsap.to(outlineProjectsBg, { opacity: 1, duration: 0.3 });
-    gsap.to(outlineProjectsStickers, { opacity: 0.7, duration: 0.3 });
+    gsap.to(outlineProjectsStickers, { opacity: 0.7, scale: 0.8, duration: 0.3 });
     gsap.to(outlineProjectsArrow , { stroke: '#EFEFEF', duration: 0.3 });
     gsap.to(projectList, { opacity: 0, duration: 0.3 });
 });
 
 projects.addEventListener('mouseleave', () => {
     gsap.to(outlineProjectsBg, { opacity: 0, duration: 0.3 });
-    gsap.to(outlineProjectsStickers, { opacity: 0.3, duration: 0.3 });
+    gsap.to(outlineProjectsStickers, { opacity: 0.3, scale: 1, duration: 0.3 });
     gsap.to(outlineProjectsArrow , { stroke: '#3B3532', duration: 0.3 });
     gsap.to(projectList, { opacity: 1, duration: 0.3 });
+});
+
+const budget = document.querySelector('.budget');
+const budgetProjectsBg = document.querySelector('.budget-projects-bg');
+const budgetProjectsStickers = document.querySelector('.budget-projects-stickers img');
+const budgetProjectsArrow = document.querySelector('.budget-projects-arrow svg');
+const budgettList = document.querySelectorAll('.budget-list');
+
+budget.addEventListener('mouseenter', () => {
+    gsap.to(budgetProjectsBg, { opacity: 1, duration: 0.3 });
+    gsap.to(budgetProjectsStickers, { opacity: 0.7, scale: 0.8, duration: 0.3});
+    gsap.to(budgetProjectsArrow, { stroke: '#EFEFEF', duration: 0.3 });
+    gsap.to(budgettList, { opacity: 0, duration: 0.3 });
+});
+
+budget.addEventListener('mouseleave', () => {
+    gsap.to(budgetProjectsBg, { opacity: 0, duration: 0.3 });
+    gsap.to(budgetProjectsStickers, { opacity: 0.7, scale: 1, duration: 0.3 });
+    gsap.to(budgetProjectsArrow, { stroke: '#3B3532', duration: 0.3 });
+    gsap.to(budgettList, { opacity: 1, duration: 0.3 });
+});
+
+const news = document.querySelector('.news');
+const newsProjectsBg = document.querySelector('.news-projects-bg');
+const newstProjectsStickers = document.querySelector('.news-projects-stickers img');
+const newstProjectsArrow = document.querySelector('.news-projects-arrow svg');
+const newsList = document.querySelectorAll('.news-list');
+
+news.addEventListener('mouseenter', () => {
+    gsap.to(newsProjectsBg, { opacity: 1, duration: 0.3 });
+    gsap.to(newstProjectsStickers, { opacity: 0.7, scale: 0.8, duration: 0.3});
+    gsap.to(newstProjectsArrow, { stroke: '#EFEFEF', duration: 0.3 });
+    gsap.to(newsList, { opacity: 0, duration: 0.3 });
+});
+
+news.addEventListener('mouseleave', () => {
+    gsap.to(newsProjectsBg, { opacity: 0, duration: 0.3 });
+    gsap.to(newstProjectsStickers, { opacity: 0.7, scale: 1, duration: 0.3 });
+    gsap.to(newstProjectsArrow, { stroke: '#3B3532', duration: 0.3 });
+    gsap.to(newsList, { opacity: 1, duration: 0.3 });
 });
 
 
 
 
 
+// footer循环遍历每个 .product-footer-stripe 元素并为它们设置动画和事件监听器
+
+function horizontalLoop(items, config) {
+    items = gsap.utils.toArray(items);
+    config = config || {};
+    let tl = gsap.timeline({
+        repeat: config.repeat,
+        paused: config.paused,
+        defaults: { ease: "none" },
+        onReverseComplete: () => tl.totalTime(tl.rawTime() + tl.duration() * 100),
+    }),
+    length = items.length,
+    startX = items[0].offsetLeft,
+    times = [],
+    widths = [],
+    xPercents = [],
+    curIndex = 0,
+    pixelsPerSecond = (config.speed || 1) * 100,
+    snap = config.snap === false ? (v) => v : gsap.utils.snap(config.snap || 1),
+    totalWidth = 0,
+    curX,
+    distanceToStart,
+    distanceToLoop,
+    item,
+    i;
+
+    // Set initial positions and widths
+    gsap.set(items, {
+        xPercent: (i, el) => {
+            let w = (widths[i] = parseFloat(gsap.getProperty(el, "width", "px")));
+            xPercents[i] = snap((parseFloat(gsap.getProperty(el, "x", "px")) / w) * 100 + gsap.getProperty(el, "xPercent"));
+            return xPercents[i];
+        },
+    });
+    gsap.set(items, { x: 0 });
+
+    // Calculate total width
+    totalWidth = items[length - 1].offsetLeft + (xPercents[length - 1] / 100) * widths[length - 1] - startX + items[length - 1].offsetWidth * gsap.getProperty(items[length - 1], "scaleX") + (parseFloat(config.paddingRight) || 0);
+
+    // Create timeline
+    for (i = 0; i < length; i++) {
+        item = items[i];
+        curX = (xPercents[i] / 100) * widths[i];
+        distanceToStart = item.offsetLeft + curX - startX;
+        distanceToLoop = distanceToStart + widths[i] * gsap.getProperty(item, "scaleX");
+
+        tl.to(item, {
+            xPercent: snap(((curX - distanceToLoop) / widths[i]) * 100),
+            duration: distanceToLoop / pixelsPerSecond,
+        }, 0)
+        .fromTo(item, {
+            xPercent: snap(((curX - distanceToLoop + totalWidth) / widths[i]) * 100)
+        }, {
+            xPercent: xPercents[i],
+            duration: (curX - distanceToLoop + totalWidth - curX) / pixelsPerSecond,
+            immediateRender: false,
+        }, distanceToLoop / pixelsPerSecond);
+
+        times[i] = distanceToStart / pixelsPerSecond;
+    }
+
+    function toIndex(index, vars) {
+        vars = vars || {};
+        Math.abs(index - curIndex) > length / 2 && (index += index > curIndex ? -length : length);
+        let newIndex = gsap.utils.wrap(0, length, index),
+            time = times[newIndex];
+        if (time > tl.time() !== index > curIndex) {
+            vars.modifiers = { time: gsap.utils.wrap(0, tl.duration()) };
+            time += tl.duration() * (index > curIndex ? 1 : -1);
+        }
+        curIndex = newIndex;
+        vars.overwrite = true;
+        return tl.tweenTo(time, vars);
+    }
+
+    tl.next = (vars) => toIndex(curIndex + 1, vars);
+    tl.previous = (vars) => toIndex(curIndex - 1, vars);
+    tl.current = () => curIndex;
+    tl.toIndex = (index, vars) => toIndex(index, vars);
+    tl.times = times;
+    tl.progress(1, true).progress(0, true); // pre-render for performance
+    if (config.reversed) {
+        tl.vars.onReverseComplete();
+        tl.reverse();
+    }
+
+    return tl;
+}
+
+document.querySelectorAll(".product-footer-stripe").forEach(stripe => {
+    const stripe1 = stripe.querySelector(".product-footer-stripe1");
+    const stripe2 = stripe.querySelector(".product-footer-stripe2");
+    const elems2 = gsap.utils.toArray(stripe.querySelectorAll(".product-footer-elem"));
+    const loop2 = horizontalLoop(elems2, { paused: false, repeat: -1, speed: 1, paddingRight: 0 });
+
+    stripe.addEventListener("mouseenter", function() {
+        setTimeout(() => {
+            gsap.to(stripe2, {
+                height: "100%",
+                ease: "expo.out", // 使用字符串来指定缓动函数
+                duration: 0.5
+            });
+        }, 140);
+        stripe1.classList.add("animate__slideOutUp");
+    });
+
+    stripe.addEventListener("mouseleave", function() {
+        setTimeout(() => {
+            gsap.to(stripe2, {
+                height: 0,
+                ease: "expo.in", // 使用字符串来指定缓动函数
+                duration: 0.5,
+                overwrite: 'auto'
+            });
+        }, 140);
+        stripe1.classList.remove("animate__slideOutUp");
+    });
+});
 
 
 
@@ -397,3 +555,198 @@ gsap.to(".row-1, .row-2", 1, {
 
 
 
+
+
+
+
+//鼠标滚动返回顶部
+
+
+/* Please ❤ this if you like it! */
+
+
+
+(function($) {
+    "use strict";
+
+    $(document).ready(function() {
+        // Existing scroll back to top logic
+        var progressPath = document.querySelector('.progress-wrap path');
+        var pathLength = progressPath.getTotalLength();
+        progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
+        progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+        progressPath.style.strokeDashoffset = pathLength;
+        progressPath.getBoundingClientRect();
+        progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+        
+        var updateProgress = function () {
+            var scroll = $(window).scrollTop();
+            var height = $(document).height() - $(window).height();
+            var progress = pathLength - (scroll * pathLength / height);
+            progressPath.style.strokeDashoffset = progress;
+        };
+        
+        updateProgress();
+        $(window).scroll(updateProgress);
+        
+        var offset = 50;
+        $(window).on('scroll', function() {
+            if ($(this).scrollTop() > offset) {
+                $('.progress-wrap').addClass('active-progress');
+            } else {
+                $('.progress-wrap').removeClass('active-progress');
+            }
+        });
+        
+        $('.progress-wrap').on('click', function(event) {
+            event.preventDefault();
+            gsap.to(window, {duration: 0.55, scrollTo: {y: 0}});
+            return false;
+        });
+        
+        // Add event listener for scroll to check bottom
+        $(window).on('scroll', function() {
+            var progressWrap = document.querySelector('.progress-wrap');
+            var scrollPosition = window.pageYOffset;
+            var windowSize = window.innerHeight;
+            var bodyHeight = document.documentElement.scrollHeight;
+
+            if (windowSize + scrollPosition >= bodyHeight - 10) { // Allow for some tolerance
+                progressWrap.classList.add('at-bottom');
+            } else {
+                progressWrap.classList.remove('at-bottom');
+            }
+        });
+        
+        // New logic to scroll to top when clicking menu links using GSAP
+        $('.menu-link.menu-close a').on('click', function(event) {
+            event.preventDefault();
+            var target = $(this).attr('href');
+            if (target === "#home") {
+                gsap.to(window, {duration: 0.55, scrollTo: {y: 0}});
+            } else {
+                var targetElement = document.querySelector(target);
+                if (targetElement) {
+                    gsap.to(window, {duration: 0.55, scrollTo: {y: targetElement.offsetTop}});
+                }
+            }
+        });
+    });
+})(jQuery);
+
+
+
+//鼠标滚动返回顶部
+
+
+//menu
+document.addEventListener("DOMContentLoaded", function () {
+    let tl = gsap.timeline({ paused: true });
+
+    tl.to(".menu-overlay", {
+    duration: 1,
+    clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+    ease: "power2.out",
+    });
+
+    tl.from(
+    ".menu-link, .btn",
+    {
+        opacity: 0,
+        y: 60,
+        stagger: 0.05,
+        duration: 0.75,
+        ease: "power1.inOut",
+    },
+    "<",
+    );
+
+    tl.to(
+    ".video-preview",
+    {
+        duration: 1,
+        height: "200px",
+        ease: "power2.out",
+    },
+    "<",
+    );
+
+    tl.to(
+    ".menu-divider",
+    {
+        duration: 2,
+        width: "100%",
+        ease: "power4.out",
+    },
+    "<",
+    );
+
+    function openMenu() {
+    document.querySelector(".menu-overlay").style.pointerEvents = "all";
+    tl.play();
+    }
+
+    function closeMenu() {
+    document.querySelector(".menu-overlay").style.pointerEvents = "none";
+    tl.reverse();
+    }
+
+    document.querySelector(".menu-open-btn").addEventListener("click", openMenu);
+    document
+    .querySelector(".menu-close-btn")
+    .addEventListener("click", closeMenu);
+    tl.reverse();
+});
+document.addEventListener('DOMContentLoaded', function() {
+    // 获取关闭菜单的按钮
+    var closeMenuBtn = document.getElementById('menuCloseBtn');
+
+    // 为所有菜单链接添加点击事件监听器
+    document.querySelectorAll('.menu-close a').forEach(function(link) {
+        link.addEventListener('click', function() {
+            // 模拟关闭按钮的点击事件
+            closeMenuBtn.click();
+        });
+    });
+});
+
+
+
+
+//🍱
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.detail-card');
+    const triggers = document.querySelectorAll('[data-target]');
+    const arrows = document.querySelectorAll('.detail-card-arrow');
+    
+    triggers.forEach(trigger => {
+      trigger.addEventListener('click', function() {
+        const targetClass = `.detail-card-${this.getAttribute('data-target')}`;
+        const targetCard = document.querySelector(targetClass);
+        
+        // 先设置 display 为 flex，然后再进行 opacity 动画
+        gsap.set(targetCard, { display: 'flex' });
+        gsap.fromTo(targetCard, { opacity: 0 }, {
+          opacity: 1,
+          duration: 0.5,
+          ease: 'power1.out'
+        });
+      });
+    });
+    
+    arrows.forEach(arrow => {
+      arrow.addEventListener('click', function() {
+        const card = this.closest('.detail-card');
+        
+        gsap.to(card, {
+          opacity: 0,
+          duration: 0.5,
+          ease: 'power1.out',
+          onComplete: () => {
+            gsap.set(card, { display: 'none' });
+          }
+        });
+      });
+    });
+  });
+  

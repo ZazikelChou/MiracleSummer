@@ -11,5 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "gsap": "file:gsap-bonus.tgz"
+  },
+  "devDependencies": {
+    "@parcel/transformer-webmanifest": "^2.12.0"
   }
 }

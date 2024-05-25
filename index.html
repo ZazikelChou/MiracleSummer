@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>映画『MiracleSummer』公式サイト</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"/>
-    <link rel="stylesheet" href="css/main.css">
-    <script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
+    <!-- <link rel="manifest" href="./img/site.webmanifest"> -->
+        <script>
         (function(d) {
           var config = {
             kitId: 'fvr7ckc',
@@ -19,7 +23,81 @@
 
 </head>
 <body>
-    <header class="header">
+   
+    <nav>
+        <div class="top-logo">
+            <img src="./img/earth.svg" alt="top-logo">
+        </div>
+        <div class="menu-open-btn" id="menuOpenBtn">
+            <span class="rounded-rectangle">
+            <span class="menu-moji">MENU</span>
+        </span>
+        </div>
+    </nav>
+    <div class="menu-overlay">
+        <div class="menu-nav">
+            <div class="menu-logo">
+                <img src="./img/earth.svg" alt="menu-logo">
+            </div>
+            <div class="menu-close-btn" id="menuCloseBtn"><span class="rounded-rectangle">
+            <span class="menu-moji">CLOSE</span>
+        </span></div>
+        </div>
+    
+    <div class="menu-cols">
+        <div class="col">
+        <div class="video">
+            <div class="video-preview"></div>
+            <div class="video-details">
+            <p>
+                <i class="ph-fill ph-play-circle"></i>
+                クラウドファンディング大募集！
+            </p>
+            <p>4.01 - 8.30</p>
+            </div>
+        </div>
+        </div>
+        <div class="menu-col">
+        <div class="menu-link menu-close">
+            <a href="#home">ホーム</a>
+        </div>
+        <div class="menu-link menu-close">
+            <a href="#overview">企画概要</a>
+        </div>
+        <div class="menu-link menu-close">
+            <a href="#project-intent">企画意図</a>
+        </div>
+        <div class="menu-link menu-close">
+            <a href="#story">ストーリー</a>
+        </div>
+        <div class="menu-link menu-close">
+            <a href="#staff">スタッフ</a>
+        </div>
+        <div class="menu-link menu-close">
+            <a href="#outline">制作概要</a>
+        </div>
+        <div class="menu-link menu-close">
+            <a href="#Contact">お問い合わせ</a>
+        </div>
+        <div class="btn menu-close">
+            <a href="https://motion-gallery.net/projects/miracle_summer">このプロジェクトを応援</a>
+        </div>
+        </div>
+    </div>
+    <div class="menu-footer">
+        <div class="menu-divider"></div>
+        <div class="menu-footer-copy">
+        <div class="slogan"><p>高知県映像村から世界へ、現役藝大生が‟奇跡”のような映画をつくる！</p></div>
+        <div class="socials">
+            <a href="https://motion-gallery.net/projects/miracle_summer" class="menu-close">クラウドファンディング</a>
+            <a href="https://www.instagram.com/film.miracle_summer?igsh=eGdwZ2ZwYjZtYzhl" class="menu-close">Instagram</a>
+            <a href="https://x.com/film_m_s_geidai" class="menu-close">X/Twitter</a>
+            <a href="#Contact" class="menu-close">お問い合わせ</a>
+        </div>
+        </div>
+    </div>
+    </div>
+    <header class="header" id="home">
         <div class="home-container">
             <div class="bgtest"></div>
             <div class="image-bg"><img src="./img/m.svg" alt="bg-moji-1"></div>
@@ -97,22 +175,7 @@
             <div class="quote-l"><img src="./img/quote-l.svg" alt="quote"></div>
             <div class="quote-r"><img src="./img/quote-r.svg" alt="quote"></div>
         </section>
-        <!-- <section id="story">
-            <img class="yLine" src="img/yLine.svg" alt="line" >
-            <div class="top-content">
-                <div class="summary">
-                    <h2>STORY</h2>
-                    
-                    <p>「奇跡が心を癒やし、忘れていた気持ちが蘇る物語」</p>
-                </div>
-                <div class="full-story">
-                    <p>仕事に忙殺され、日々の生活もままならない中、地元に帰ってきた真尋(２５)。実家の自分の部屋に戻ると、部屋が様変わりしていた。真尋の部屋を改造して基地にし、毎晩何かを探している様子なのは、弟の洸平(１４)、その友達の日和(１４)、爽汰(１０)。真尋も最初は興味を示さないものの、3人の活動に巻き込まれていく。 <br>ある日、近くの野原に仕掛けたという罠を見にいくことになった一向。罠の周りでは、小さな UFO がいた。一向は苦労して UFO を捕まえ、家に持ち帰る。子供たち３人は UFO を本物と見なして実験を繰り返すが、真尋はそれが本物だとは信じられない。しかし真剣に実験する子供たちの様子を見て少しずつ UFO に興味を持ち始める。 <br>次第に、過去の自分が同じように未知の存在を信じ、 小さな奇跡を待ち望んでいたことを思い出す真尋。UFOはどんな実験をしても何の反応も示さなかったが、ある晩、真尋が何気なく発した言葉が発端となり、ついにUFOが動き出す。</p>
-                </div>
-               
-            </div>
-            <div class="bottom-image"></div>
-                
-        </section> -->
+        
         <section id="story">
             <img id="story-bg" src="./img/story_bg_new.png" alt="Background Image">
             <img class="yLine" src="./img/yLine.svg" alt="line" >
@@ -621,7 +684,7 @@
                     </div>
                   </div>
           
-                  <div class="brand-contact flex-center">
+                  <div class="brand-contact flex-center" data-target="brand-contact">
                         <div class="brand-contact-bg"></div>
                         
                     <div class="contact-container">
@@ -639,7 +702,7 @@
                   <div class="hero-copy border-right">
                     <!-- inner rows -->
                     <div class="i-row i-row1">
-                      <div class="col projects">
+                      <div class="col projects" data-target="projects">
                         <div class="outline-projects-bg"></div>
                         <div class="outline-projects-stickers">
                             <img src="./img/telescopes.svg" alt="telescopes">
@@ -663,16 +726,16 @@
                       </div>
                     </div>
                     <div class="i-row i-row2">
-                      <div class="col budget flex-center">
+                      <div class="col budget flex-center" data-target="budget">
                         <div class="budget-projects-bg"></div>
                         <div class="budget-projects-stickers">
                             <img src="./img/ufo2.svg" alt="ufo">
                         </div>
                         <div class="budget-projects-arrow">
                             <svg width="66" height="67" viewBox="0 0 66 67" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M60.5 5L60.5 66.0005" stroke="#3B3532" stroke-width="11"/>
-                                <path d="M5 61L66.0005 61" stroke="#3B3532" stroke-width="11"/>
-                                <path d="M4 4L61.9828 61.9828" stroke="#3B3532" stroke-width="11"/>
+                                <path d="M60.5 5L60.5 66.0005"  stroke-width="11"/>
+                                <path d="M5 61L66.0005 61" stroke-width="11"/>
+                                <path d="M4 4L61.9828 61.9828" stroke-width="11"/>
                                 </svg>
                                  
                         </div>
@@ -682,16 +745,16 @@
                        
 
                       </div>
-                      <div class="col news">
+                      <div class="col news" data-target="news">
                         <div class="news-projects-bg"></div>
                         <div class="news-projects-stickers">
                             <img src="./img/net.svg" alt="ufo">
                         </div>
                         <div class="news-projects-arrow">
                             <svg width="66" height="67" viewBox="0 0 66 67" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M60.5 5L60.5 66.0005" stroke="#3B3532" stroke-width="11"/>
-                                <path d="M5 61L66.0005 61" stroke="#3B3532" stroke-width="11"/>
-                                <path d="M4 4L61.9828 61.9828" stroke="#3B3532" stroke-width="11"/>
+                                <path d="M60.5 5L60.5 66.0005"  stroke-width="11"/>
+                                <path d="M5 61L66.0005 61"  stroke-width="11"/>
+                                <path d="M4 4L61.9828 61.9828"  stroke-width="11"/>
                                 </svg>
                                
                                 
@@ -868,9 +931,402 @@
                         株式会社東京映画社 &nbsp; / &nbsp; キャスティング協力：&nbsp;ルーラル・アーティスツ株式会社 &nbsp; 
                 </span>
               </div>
+              <div class="detail-card detail-card-brand-contact">
+                <div class="detail-card-arrow">
+                    <svg width="67" height="66" viewBox="0 0 67 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 5.5H66.0005"  stroke-width="11"/>
+                        <path d="M61 61L61 -0.000469208"  stroke-width="11"/>
+                        <path d="M4 62L61.9828 4.01724"  stroke-width="11"/>
+                        </svg>    
+                </div>
+                <div class="detail-card-bg">
+                    <svg width="641" height="469" viewBox="0 0 641 469" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.3219 37.319C178.937 -29.1747 216.252 291.276 114.344 269.216C12.4352 247.156 99.7697 -28.5187 273.487 26.8795C447.204 82.2777 453.445 427.635 328.543 374.896C203.641 322.156 352.654 26.2218 499.855 58.0884C647.056 89.955 653.693 355.823 553.466 449.287" stroke="#EB94FB" stroke-width="39" stroke-linecap="round"/>
+                        </svg>                         
+                </div>
+                <h3>自然豊かな高知ロケの魅力</h3>
+                <h4>自然豊かで、美味しいものもたくさん。</br>
+                    魅力ある高知でのロケは、とても楽しみです。</h4>
+                <span>ロケーションは以下の団体、会社にご協力をいただきました</span>
+                <a href="https://www.eigasha.com/">【(株)東京映画社】</a>
+                <a href="https://yuzuroad.jp/">【中芸のゆずと森林鉄道日本遺産協議会】</a>
+                <a href="https://higashi-kochi.jp/">【一般社団法人　高知県東部観光協議会】</a>
+                <a href="https://www.youtube.com/watch?v=xQU7JQVrHdE" class="card-brand-contact-footer">ロケ地となる高知県安田町のPV</a>
+              </div>
+              <div class="detail-card detail-card-projects">
+                <div class="detail-card-arrow">
+                    <svg width="67" height="66" viewBox="0 0 67 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 5.5H66.0005"  stroke-width="11"/>
+                        <path d="M61 61L61 -0.000469208"  stroke-width="11"/>
+                        <path d="M4 62L61.9828 4.01724"  stroke-width="11"/>
+                        </svg>    
+                </div>
+                <div class="detail-card-bg">
+                    <svg width="853" height="547" viewBox="0 0 853 547" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M34 34.1494C179.349 47.802 173.152 512.116 173.164 512.113C173.177 512.109 311.299 237.881 398.305 243.304C485.311 248.727 489.265 531.123 503.616 483.667C503.616 483.667 717.878 258.97 818.455 512.768" stroke="#F5CC43" stroke-width="68" stroke-linecap="round"/>
+                        </svg>
+                                              
+                </div>
+                <h3>スケジュール</h3>
+                <div class="detail-card-projects-timeline">
+                    <div class="projects-timeline-item">
+                        <span class="projects-timeline-item-left">2024年4月末まで</span>
+                        <span class="projects-timeline-item-right">ロケハン</span>
+                    </div>
+                    <div class="projects-timeline-item">
+                        <span class="projects-timeline-item-left">2024年5月</span>
+                        <span class="projects-timeline-item-right">キャスト決定</span>
+                    </div>
+                    <div class="projects-timeline-item">
+                        <span class="projects-timeline-item-left">2024年6月</span>
+                        <span class="projects-timeline-item-right">美術飾りこみ、カメラテスト</span>
+                    </div>
+                    <div class="projects-timeline-item">
+                        <span class="projects-timeline-item-left">2024年7月13日～7月28日</span>
+                        <span class="projects-timeline-item-right">撮影完了</span>
+                    </div>
+                    <div class="projects-timeline-item">
+                        <span class="projects-timeline-item-left">2024年7月29日～11月下旬</span>
+                        <span class="projects-timeline-item-right">編集</span>
+                    </div>
+                    <div class="projects-timeline-item">
+                        <span class="projects-timeline-item-left">2025年2月頃</span>
+                        <span class="projects-timeline-item-right">国内外の映画祭に出品予定</span>
+                    </div>
+                    <div class="projects-timeline-item">
+                        <span class="projects-timeline-item-left">その後、劇場公開も目指す</span>
+                    </div>
+                    
+                </div>
+              </div>
+              <div class="detail-card detail-card-budget">
+                <div class="detail-card-arrow">
+                    <svg width="67" height="66" viewBox="0 0 67 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 5.5H66.0005"  stroke-width="11"/>
+                        <path d="M61 61L61 -0.000469208"  stroke-width="11"/>
+                        <path d="M4 62L61.9828 4.01724"  stroke-width="11"/>
+                        </svg>    
+                </div>
+                <div class="detail-card-bg">
+                    <svg width="871" height="603" viewBox="0 0 871 603" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M34 498.13C455.07 814.189 749.494 -33.5612 474.106 38.3508C198.718 110.263 738.8 531.597 837 302.917" stroke="#3F75BB" stroke-width="68" stroke-linecap="round"/>
+                        </svg>
+                        
+                                              
+                </div>
+                <h3>制作予算</h3>
+                <h4>資金調達方法</h4>
+                <ul>
+                    <li>・メインスタッフ自己資金</li>
+                    <li>・団体や個人による助成金・補助金</li>
+                    <li>・クラウドファンディング</li>
+                    <li>（全体の予算は500万円と想定されており、2024年5月時点では全体の７割を集めておりました）</li>
+                </ul>
+                <h4>主要費用項目</h4>
+                <ul>
+                    <li>・キャスト出演費</li>
+                    <li>・キャスト・スタッフ都内・横浜から高知までの交通費</li>
+                    <li>・美術費</li>
+                    <li>・ポストプロダクション費（アニメーション・CG使用予定）</li>
+                </ul>
+              </div>
+              <div class="detail-card detail-card-news">
+                <div class="detail-card-arrow">
+                    <svg width="67" height="66" viewBox="0 0 67 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 5.5H66.0005"  stroke-width="11"/>
+                        <path d="M61 61L61 -0.000469208"  stroke-width="11"/>
+                        <path d="M4 62L61.9828 4.01724"  stroke-width="11"/>
+                        </svg>    
+                </div>
+                <div class="detail-card-bg">
+                    <svg width="674" height="835" viewBox="0 0 674 835" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M639.835 126.511C567.246 42.874 420.213 -8.97929 365.386 81.9744C310.559 172.928 384.415 372.502 407.737 387.781C431.059 403.061 117.319 282.651 42.9714 492.428C-31.3763 702.205 417.431 895.239 607.517 750.754" stroke="#3F75BB" stroke-width="68" stroke-linecap="round"/>
+                        </svg>
+                                              
+                </div>
+                <h3>最新情報</h3>
+                <ul>
+                    <li><a href="https://x.com/film_M_S_geidai/status/1790996040348483866">高知新聞さんに取材いただきました！</a></li>
+                <li><a href="https://x.com/film_M_S_geidai/status/1789864978083721593">クラウドファンディングが開始しました。8/30まで!</a></li>
+                <li><a href="https://x.com/rural_a_2021/status/1792727802690838965">高知現地でエキストラ募集し始めました。</a></li>
+            </ul>
+              </div>
+        </section>
+   
+
+        <section class="product-footer" id="Contact"> 
+            <div class="product-footer-socials">
+                <div class="product-footer-title">
+                    <h2>/ Follow us</h2>
+                </div>
+                <ul>
+                    <li><div class="product-footer-stripe">
+                        <div class="product-footer-stripe1 footer-jpfont">
+                            クラウドファンディング
+                        </div><a href="https://motion-gallery.net/projects/miracle_summer" class="product-footer-stripe2-link">
+                    <div class="product-footer-stripe2">
+                        <div class="product-footer-cnt">
+                            <div class="product-footer-elem">
+                                <div class="product-footer-bottleimg">
+                                    👽
+                                </div>
+                                <span class="product-footer-brands">MOTION GALLERY</span>
+                                <div class="product-footer-bottleimg">
+                                    👽
+                                </div>
+                                <span class="product-footer-at">@miracle_summer</span>
+                            </div>
+                            <div class="product-footer-elem">
+                                <div class="product-footer-bottleimg">
+                                    👽
+                                </div>
+                                <span class="product-footer-brands">MOTION GALLERY</span>
+                                <div class="product-footer-bottleimg">
+                                    👽
+                                </div>
+                                <span class="product-footer-at">@miracle_summer</span>
+                            </div>
+                            <div class="product-footer-elem">
+                                <div class="product-footer-bottleimg">
+                                    👽
+                                </div>
+                                <span class="product-footer-brands">MOTION GALLERY</span>
+                                <div class="product-footer-bottleimg">
+                                    👽
+                                </div>
+                                <span class="product-footer-at">@miracle_summer</span>
+                            </div>
+                            <div class="product-footer-elem">
+                                <div class="product-footer-bottleimg">
+                                    👽
+                                </div>
+                                <span class="product-footer-brands">MOTION GALLERY</span>
+                                <div class="product-footer-bottleimg">
+                                    👽
+                                </div>
+                                <span class="product-footer-at">@miracle_summer</span>
+                            </div>
+                            <div class="product-footer-elem">
+                                <div class="product-footer-bottleimg">
+                                    👽
+                                </div>
+                                <span class="product-footer-brands">MOTION GALLERY</span>
+                                <div class="product-footer-bottleimg">
+                                    👽
+                                </div>
+                                <span class="product-footer-at">@miracle_summer</span>
+                            </div>
+                           
+                    </div>
+                    
+                    </div></a>
+                    
+                
+                </div></li>
+                    <li><div class="product-footer-stripe">
+                        <div class="product-footer-stripe1">
+                            Instagram
+                        </div><a href="https://www.instagram.com/film.miracle_summer?igsh=eGdwZ2ZwYjZtYzhl" class="product-footer-stripe2-link">
+                    <div class="product-footer-stripe2">
+                        <div class="product-footer-cnt">
+                            <div class="product-footer-elem">
+                                <div class="product-footer-bottleimg">
+                                    🛸
+                                </div>
+                                <span class="product-footer-brands">Instagram</span>
+                                <div class="product-footer-bottleimg">
+                                    🛸
+                                </div>
+                                <span class="product-footer-at">@film.miracle_summer</span>
+                            </div>
+                            <div class="product-footer-elem">
+                                <div class="product-footer-bottleimg">
+                                    🛸
+                                </div>
+                                <span class="product-footer-brands">Instagram</span>
+                                <div class="product-footer-bottleimg">
+                                    🛸
+                                </div>
+                                <span class="product-footer-at">@film.miracle_summer</span>
+                            </div>
+                            <div class="product-footer-elem">
+                                <div class="product-footer-bottleimg">
+                                    🛸
+                                </div>
+                                <span class="product-footer-brands">Instagram</span>
+                                <div class="product-footer-bottleimg">
+                                    🛸
+                                </div>
+                                <span class="product-footer-at">@film.miracle_summer</span>
+                            </div>
+                            <div class="product-footer-elem">
+                                <div class="product-footer-bottleimg">
+                                    🛸
+                                </div>
+                                <span class="product-footer-brands">Instagram</span>
+                                <div class="product-footer-bottleimg">
+                                    🛸
+                                </div>
+                                <span class="product-footer-at">@film.miracle_summer</span>
+                            </div>
+                            <div class="product-footer-elem">
+                                <div class="product-footer-bottleimg">
+                                    🛸
+                                </div>
+                                <span class="product-footer-brands">Instagram</span>
+                                <div class="product-footer-bottleimg">
+                                    🛸
+                                </div>
+                                <span class="product-footer-at">@film.miracle_summer</span>
+                            </div>
+                           
+                    </div>
+                    
+                    </div></a>
+                    
+                
+                </div></li>
+                    <li><div class="product-footer-stripe">
+                                <div class="product-footer-stripe1">
+                                    X/Twitter
+                                </div>
+                                <a href="https://x.com/film_m_s_geidai" class="product-footer-stripe2-link">
+                            <div class="product-footer-stripe2">
+                                <div class="product-footer-cnt">
+                                    <div class="product-footer-elem">
+                                        <div class="product-footer-bottleimg">
+                                            🚀
+                                        </div>
+                                        <span class="product-footer-brands">X/Twitter</span>
+                                        <div class="product-footer-bottleimg">
+                                            🚀
+                                        </div>
+                                        <span class="product-footer-at">@film_M_S_geidai</span>
+                                    </div>
+                                    <div class="product-footer-elem">
+                                        <div class="product-footer-bottleimg">
+                                            🚀
+                                        </div>
+                                        <span class="product-footer-brands">X/Twitter</span>
+                                        <div class="product-footer-bottleimg">
+                                            🚀
+                                        </div>
+                                        <span class="product-footer-at">@film_M_S_geidai</span>
+                                    </div> <div class="product-footer-elem">
+                                        <div class="product-footer-bottleimg">
+                                            🚀
+                                        </div>
+                                        <span class="product-footer-brands">X/Twitter</span>
+                                        <div class="product-footer-bottleimg">
+                                            🚀
+                                        </div>
+                                        <span class="product-footer-at">@film_M_S_geidai</span>
+                                    </div> <div class="product-footer-elem">
+                                        <div class="product-footer-bottleimg">
+                                            🚀
+                                        </div>
+                                        <span class="product-footer-brands">X/Twitter</span>
+                                        <div class="product-footer-bottleimg">
+                                            🚀
+                                        </div>
+                                        <span class="product-footer-at">@film_M_S_geidai</span>
+                                    </div> <div class="product-footer-elem">
+                                        <div class="product-footer-bottleimg">
+                                            🚀
+                                        </div>
+                                        <span class="product-footer-brands">X/Twitter</span>
+                                        <div class="product-footer-bottleimg">
+                                            🚀
+                                        </div>
+                                        <span class="product-footer-at">@film_M_S_geidai</span>
+                                    </div> 
+                            </div>
+                            
+                            </div></a>
+                    
+                
+                </div></li>
+                    <li><div class="product-footer-stripe">
+                        <div class="product-footer-stripe1 footer-jpfont">
+                            お問い合わせ
+                        </div>
+                        <a href="#" class="product-footer-stripe2-link">
+                    <div class="product-footer-stripe2">
+                        <div class="product-footer-cnt">
+                            <div class="product-footer-elem">
+                                <div class="product-footer-bottleimg">
+                                    💌
+                                </div>
+                                <span class="product-footer-brands">MAIL</span>
+                                <div class="product-footer-bottleimg">
+                                    💌
+                                </div>
+                                <span class="product-footer-at">miraclesummer2024@gmail.com</span>
+                            </div>
+                            <div class="product-footer-elem">
+                                <div class="product-footer-bottleimg">
+                                    💌
+                                </div>
+                                <span class="product-footer-brands">MAIL</span>
+                                <div class="product-footer-bottleimg">
+                                    💌
+                                </div>
+                                <span class="product-footer-at">miraclesummer2024@gmail.com</span>
+                            </div>
+                            <div class="product-footer-elem">
+                                <div class="product-footer-bottleimg">
+                                    💌
+                                </div>
+                                <span class="product-footer-brands">MAIL</span>
+                                <div class="product-footer-bottleimg">
+                                    💌
+                                </div>
+                                <span class="product-footer-at">miraclesummer2024@gmail.com</span>
+                            </div>
+                            <div class="product-footer-elem">
+                                <div class="product-footer-bottleimg">
+                                    💌
+                                </div>
+                                <span class="product-footer-brands">MAIL</span>
+                                <div class="product-footer-bottleimg">
+                                    💌
+                                </div>
+                                <span class="product-footer-at">miraclesummer2024@gmail.com</span>
+                            </div>
+                            <div class="product-footer-elem">
+                                <div class="product-footer-bottleimg">
+                                    💌
+                                </div>
+                                <span class="product-footer-brands">MAIL</span>
+                                <div class="product-footer-bottleimg">
+                                    💌
+                                </div>
+                                <span class="product-footer-at">miraclesummer2024@gmail.com</span>
+                            </div>
+                           
+                            
+                    </div>
+                    
+                    </div></a>
+                    
+                
+                </div></li>
+
+                </ul>
+            </div>
+            <div class="footer-end">
+                <span class="footer-up">プライバシーポリシー</span>
+                <!-- <img src="img/gokucha-footer.svg" alt="gokucha"> -->
+                <span class="footer-bottom">© 2024 MIRACLE SUMMER</span>
+            </div>
         </section>
     </main>
-
+    <!-- 鼠标滚动到末尾返回顶部鼠标滚动到末尾返回顶部 -->
+    <div class="progress-wrap">
+		<svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+			<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+		</svg>
+	</div>
     <svg style="display:none;" width="67" height="66" viewBox="0 0 67 66" fill="none" xmlns="http://www.w3.org/2000/svg">
         <!-- 原始形状 -->
         <path id="original-svg-path" d="M5 5.5H66.0005M61 61L61 -0.000469208M4 62L61.9828 4.01724" stroke="#3B3532" stroke-width="11"/>
@@ -883,5 +1339,7 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script> -->
     <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script> 
+    <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 </body>
 </html>
