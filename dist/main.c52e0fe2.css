@@ -636,7 +636,6 @@ main #staff .staff-list .staff-card .staff-item .staff-item-R span {
 main #staff .staff-list .staff-card .staff-info {
   display: none;
   grid-template-rows: 1fr auto;
-  padding: 0vw 5vw;
   background-color: #EFEFEF;
   margin-bottom: 3vw;
 }
@@ -1171,14 +1170,16 @@ main #outline .detail-card-brand-contact span {
   font-weight: 700;
   color: #EFEFEF;
   margin: 2vh 0.1vw 2vh 0.1vw;
+  z-index: 1;
 }
 main #outline .detail-card-brand-contact a {
   font-size: 1.6rem;
   font-style: normal;
   font-weight: 700;
-  line-height: 44px; /* 183.333% */
   text-decoration-line: underline;
   color: #EFEFEF;
+  margin-bottom: 1vh;
+  z-index: 1;
 }
 main #outline .detail-card-brand-contact .card-brand-contact-footer {
   position: absolute;
@@ -1696,6 +1697,157 @@ nav {
   }
   50% {
     transform: translate(-50%, -49%) scale(1.02);
+  }
+}
+@media (max-width: 1919px) and (min-width: 900px) {
+  main #overview .overview—container {
+    padding-bottom: 5vw;
+    width: 80vw;
+  }
+  main #overview .overview—container .overview-title-img {
+    margin-top: 3vw;
+  }
+  main #overview .overview—container .overview-title-img img {
+    width: 30vw;
+    height: auto;
+  }
+  main #overview .overview—container p {
+    width: 80vw;
+    font-size: 8rem;
+  }
+  main #overview .overview—container p .custom-size {
+    font-size: 15rem; /* 或者任何你需要的大小 */
+  }
+  main #staff .staff-list .staff-card .staff-item .staff-item-L span {
+    font-size: 4rem;
+  }
+  main #staff .staff-list .staff-card .staff-item .staff-item-R span {
+    font-size: 4rem;
+  }
+  main #project-intent p {
+    font-size: 2rem;
+    line-height: 4rem; /* 175% */
+  }
+  main #project-intent .horizontal-line {
+    margin-bottom: 0.5vw;
+  }
+  main #project-intent .project-intent-text {
+    font-size: 1.6rem;
+  }
+  main #project-intent .project-intent-director {
+    font-size: 2rem;
+  }
+  main #story .summary .one-liner-story {
+    font-size: 4rem;
+  }
+  main #story .summary .story-content {
+    font-size: 1.6rem;
+    line-height: 2.6rem; /* 195% */
+  }
+  main #outline .brand-name .outline-header h2 {
+    font-family: "mostra-nuova", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 10rem;
+    letter-spacing: -1rem;
+    color: #3B3532;
+  }
+  main #outline .brand-name .outline-header .star-outline svg {
+    width: 8rem;
+    height: auto;
+  }
+  main #outline .detail-card {
+    height: 90vh;
+  }
+  main #outline .brand-contact .contact-container .contact-container-t {
+    font-size: 4rem;
+  }
+  main #outline .brand-contact .contact-container .contact-container-m {
+    font-size: 4rem;
+  }
+  main #outline .brand-contact .contact-container .contact-container-b {
+    font-size: 1.6rem;
+  }
+  main #outline .projects .project-list h3 {
+    font-size: 4rem;
+  }
+  main #outline .budget .budget-list {
+    z-index: 20;
+  }
+  main #outline .budget .budget-list h3 {
+    font-size: 4rem;
+  }
+  main #outline .news .news-list h3 {
+    font-size: 4rem;
+  }
+  main #outline .img-container h4 {
+    font-size: 2rem;
+    letter-spacing: 2rem;
+  }
+  main #outline .detail-card-brand-contact {
+    background-color: #4F68C5;
+  }
+  main #outline .detail-card-brand-contact .detail-card-bg {
+    position: absolute;
+    top: 60%;
+    left: 5%;
+  }
+  main #outline .detail-card-brand-contact .detail-card-bg svg {
+    width: 100%;
+    height: auto;
+  }
+  main #outline .detail-card-brand-contact h3 {
+    font-size: 4rem;
+  }
+  main #outline .detail-card-brand-contact h4 {
+    font-size: 2rem;
+    margin: 1vh 0.1vw 1vh 0.1vw;
+  }
+  main #outline .detail-card-brand-contact span {
+    font-size: 1.6rem;
+    margin: 2vh 0.1vw 1vh 0.1vw;
+  }
+  main #outline .detail-card-brand-contact a {
+    font-size: 1.6rem;
+  }
+  main #outline .detail-card-projects h3 {
+    margin-top: 15vh;
+    font-size: 6rem;
+  }
+  main #outline .detail-card-projects .detail-card-projects-timeline {
+    margin-top: 2vh;
+    padding-left: 1.2vw;
+    font-size: 1.6rem;
+  }
+  main #outline .detail-card-projects .detail-card-projects-timeline .projects-timeline-item {
+    margin-top: 1.5vh;
+  }
+  main #outline .detail-card-budget h3 {
+    margin-top: 15vh;
+    font-size: 6rem;
+  }
+  main #outline .detail-card-budget h4 {
+    font-size: 3rem;
+  }
+  main #outline .detail-card-news h3 {
+    margin-top: 15vh;
+    font-size: 6rem;
+  }
+  main #outline .detail-card-news ul {
+    font-size: 1.6rem;
+  }
+  @keyframes marquee-animation {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(-100%, 0);
+    }
+  }
+  main #outline .brand-name,
+  main #outline .brand-contact {
+    position: relative;
+    overflow: hidden;
   }
 }
 @media (max-width: 900px) {

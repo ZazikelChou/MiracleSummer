@@ -665,7 +665,6 @@ main{
                 .staff-info{
                     display: none;
                     grid-template-rows: 1fr auto;
-                    padding: 0vw 5vw;
                     background-color: $background-color;
                     margin-bottom: 3vw;
                     
@@ -1261,14 +1260,16 @@ main{
             font-weight: 700;
             color: $background-color;
             margin: 2vh 0.1vw 2vh 0.1vw;
+            z-index: 1;
         }
         a{
             font-size: 1.6rem;
             font-style: normal;
             font-weight: 700;
-            line-height: 44px; /* 183.333% */
             text-decoration-line: underline;
             color: $background-color;
+            margin-bottom: 1vh;
+            z-index: 1;
             
         }
         .card-brand-contact-footer{
@@ -1853,9 +1854,275 @@ main{
 
            
 
-            @media (max-width: 1919px) and (min-width: 1024px) {
+            @media (max-width: 1919px) and (min-width: 900px) {
+                main{
+                    #overview{
+                        .overview—container{
+                            padding-bottom: 5vw;
+                            width: 80vw;
+                            .overview-title-img{
+                                margin-top: 3vw;
+                                img{
+                                    width: 30vw;
+                                    height: auto;
+                                
+                                }
+                            }
+                            p{
+                                width: 80vw;
+                                font-size: 8rem;
+                                .custom-size {
+                                    font-size: 15rem; /* 或者任何你需要的大小 */
+                                }
+                                
+                            }
+                            
+                            
+                        }
+                        
+                    }
+                    #staff{
+                        .staff-list{
+                            .staff-card{
+                                .staff-item{
                 
+                                    .staff-item-L{
+                                        span{
+
+                                            font-size: 4rem;
+                                        }
+                                        }
+                                    .staff-item-R{
+                                        span{
+                                            font-size: 4rem;
+                                        }
+                                    }
+                                }
+
+                            }
+                            
+                        }
+                        
+                    }
+                    #project-intent{
+                        p{
+
+                            font-size: 2rem;
+                            line-height: 4rem; /* 175% */
+                        }
+                        .horizontal-line {
+                            margin-bottom: 0.5vw;
+                        }
+                        .project-intent-text{
+                            
+                            font-size: 1.6rem;
+
+                        }
+                        .project-intent-director{
+
+                            font-size: 2rem;
+
+                        }
+
+                    }
+                    #story{
+                
+                        .summary{
+                                
+                                .one-liner-story{
+
+                                    font-size: 4rem;
+                                }
+                                .story-content{
+                                font-size: 1.6rem;
+                                    line-height: 2.6rem; /* 195% */
+
+                                    }
+                                    
+                            }
+                            
+                            
+                        }
+                    #outline{
+                        .brand-name {
+
+                            .outline-header {
+
+                                h2{
+                                    
+                                    font-family: "mostra-nuova", sans-serif;
+                                    font-weight: 900;
+                                    font-style: normal;
+                                    font-size: 10rem;
+                                    letter-spacing: -1rem;
+                                    color: $font-color;
+                                }
+                                .star-outline{
+                                    svg{
+                                        width: 8rem;
+                                    height: auto;
+                                    }
+                                    
+                                
+                                }
+                            }
+                        }
+                        .detail-card{
+                            height: 90vh;
+                        }
+                        .brand-contact {
+                        
+                            .contact-container{
+                                .contact-container-t{
+                                    font-size: 4rem;
+                                }
+                                .contact-container-m{
+                                    font-size: 4rem;
+                                    
+                                }
+                                .contact-container-b{
+                                    font-size: 1.6rem;
+
+                                }
+                            }
+                        }
+                        .projects{
+
+
+
+                              .project-list{
+                                h3{
+                                    font-size: 4rem;
+
+                                }
+                              }
+                          }
+
+                        .budget{
+
+                              .budget-list{
+                                z-index: 20;
+                                h3{
+                                    font-size: 4rem;
+                                }
+                              }
+                        }
+                        .news{
+
+                              .news-list{
+
+                                h3{
+
+                                    font-size: 4rem;
+                                }
+                              }
+                        }
+                        .img-container {
+
+
+                              h4{
+                                font-size: 2rem;
+                                letter-spacing: 2rem; 
+                            }
+                        }
+                
+                
+                    .detail-card-brand-contact{
+                        background-color: #4F68C5;
+                        .detail-card-bg{
+                            position: absolute;
+                            top: 60%;
+                            left: 5%;
+                            svg{
+                                width:100%;
+                                height: auto;
+                            }
+                            
+                        }
+                        h3{
+                            font-size: 4rem;
+
+                        }
+                        h4{
+                            font-size: 2rem;
+   
+                            margin: 1vh 0.1vw 1vh 0.1vw;
+                        }
+                        span{
+                            font-size: 1.6rem;
+    
+                            margin: 2vh 0.1vw 1vh 0.1vw;
+                        }
+                        a{
+                            font-size: 1.6rem;
+
+                            
+                        }
+
+                        }
+
+                    .detail-card-projects{
+
+                        h3{
+                            margin-top: 15vh;
+                            font-size: 6rem;
+                            
+                        }
+                        .detail-card-projects-timeline{
+                            margin-top: 2vh;
+                            padding-left: 1.2vw;
+                            font-size: 1.6rem;
+                            .projects-timeline-item {
+
+                                margin-top: 1.5vh;
+                            }
+                            
+                        }
+                
+                    }
+                    
+                    .detail-card-budget{
+
+                        h3{
+                            margin-top: 15vh;
+                            font-size: 6rem;
+                        }
+                        h4{
+                            font-size: 3rem;
+
+                        }
+                
+                        
+                    }
+                    .detail-card-news{
+
+                    h3{
+                        margin-top: 15vh;
+                        font-size: 6rem;
+                    }
+                    ul{
+                            font-size: 1.6rem;
+                    }
+                    }
+                    @keyframes marquee-animation {
+                        0% {
+                        transform: translate(0, 0);
+                        }
+                        100% {
+                        transform: translate(-100%, 0);
+                        }
+                    }
+                        .brand-name,
+                        .brand-contact {
+                        position: relative;
+                        overflow: hidden;
+                        }
+                    }
+
+
+                }
             }
+                
 
 
 
